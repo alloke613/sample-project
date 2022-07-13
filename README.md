@@ -1,0 +1,1 @@
+Open 3 different folders in different terminal, run "npm start" on each terminal and visit "http://localhost:6880/"
