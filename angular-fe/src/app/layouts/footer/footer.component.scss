@@ -1,0 +1,42 @@
+$a-text-color: #ba54f5;
+$a-text-hover-color: #e14eca;
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+    background-color: white;
+    z-index: 1;
+
+    .copyright {
+        float: right;
+        font-size: 0.75rem;
+        line-height: 1.5rem;
+        color: #1d253b;
+
+        a {
+            text-decoration: none;
+            color: $a-text-color;
+            font-weight: 300;
+
+            &:hover,
+            &:focus {
+                color: $a-text-hover-color;
+            }
+        }
+
+        .mat-icon {
+            font-size: 0.75rem;
+            color: $a-text-color;
+        }
+    }
+
+    &:after {
+        display: table;
+        clear: both;
+        content: " ";
+    }
+}

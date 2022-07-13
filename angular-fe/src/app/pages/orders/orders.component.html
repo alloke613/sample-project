@@ -1,0 +1,38 @@
+<section class="container-fluid" style="padding-left: 50px; width: 100%;">
+    <form [formGroup]="ordersForm" (ngSubmit)="submitForm()">
+
+        <div formArrayName="itemsFormArray">
+            <div *ngFor="let item of itemsFormArray.controls; index as idx" [formGroupName]="idx">
+                <mat-form-field appearance="outline">
+                    <mat-label for="item-name">Item Name</mat-label>
+                    <input matInput type="text" placeholder="Item Name" formControlName="itemName">
+                    <mat-icon matSuffix></mat-icon>
+                    <mat-hint></mat-hint>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label for="unit">Unit</mat-label>
+                    <input matInput type="number" placeholder="Unit" formControlName="unit">
+                    <mat-icon matSuffix></mat-icon>
+                    <mat-hint></mat-hint>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label for="unit-price">Unit Price</mat-label>
+                    <input matInput type="number" placeholder="Unit Price (in cent)" formControlName="unitPrice">
+                    <mat-icon matSuffix></mat-icon>
+                    <mat-hint></mat-hint>
+                </mat-form-field>
+
+                <button mat-mini-fab color="warn" (click)="removeItemForm(idx)">
+                    <mat-icon>remove</mat-icon>
+                </button>
+            </div>
+        </div>
+
+        <button mat-raised-button color="accent" (click)="addItemForm()">Add Item</button>
+        &nbsp;
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+
+    </form>
+</section>

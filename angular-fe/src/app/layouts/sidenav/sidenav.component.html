@@ -1,0 +1,13 @@
+<section id="sidenav">
+    <div class="sidenav-content">
+        <ul class="nav">
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" *ngFor="let menuItem of menuItems"
+                class="nav-item">
+                <a routerLink="{{ menuItem.path }}" *ngIf="menuItem.data.displaySidenav" class="nav-anchor">
+                    <mat-icon>{{ menuItem.data.icon }}</mat-icon>
+                    <p>{{ menuItem.data.title }}</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>

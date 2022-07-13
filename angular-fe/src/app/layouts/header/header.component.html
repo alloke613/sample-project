@@ -1,0 +1,29 @@
+<section id="header">
+    <mat-toolbar color="primary" class="header-toolbar">
+        <button mat-icon-button (click)="toggleSidenav()" *ngIf="isAuthorised">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>Setel Test</span>
+        <span class="spacer"></span>
+        <button mat-button *ngIf="!isAuthorised">Login</button>
+        <button mat-button *ngIf="!isAuthorised">Sign Up</button>
+        <button mat-icon-button [matMenuTriggerFor]="headerMenu" *ngIf="isAuthorised">
+            <mat-icon>account_circle</mat-icon>
+        </button>
+        <mat-menu #headerMenu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>settings</mat-icon>
+                <span>Settings</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>manage_accounts</mat-icon>
+                <span>Profile</span>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item>
+                <mat-icon>power_settings_new</mat-icon>
+                <span>Log Out</span>
+            </button>
+        </mat-menu>
+    </mat-toolbar>
+</section>
